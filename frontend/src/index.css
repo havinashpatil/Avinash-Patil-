@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-neutral-50 via-primary-50 to-neutral-100 min-h-screen font-sans text-neutral-800;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md rounded-2xl shadow-glass border border-white/20;
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:shadow-glow hover:scale-[1.02];
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl font-medium 
+           shadow-md hover:shadow-lg hover:from-primary-600 hover:to-primary-700 
+           transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-success {
+    @apply px-6 py-3 bg-gradient-to-r from-success-500 to-success-600 text-white rounded-xl font-medium 
+           shadow-md hover:shadow-lg hover:from-success-600 hover:to-success-700 
+           transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-danger {
+    @apply px-6 py-3 bg-gradient-to-r from-danger-500 to-danger-600 text-white rounded-xl font-medium 
+           shadow-md hover:shadow-lg hover:from-danger-600 hover:to-danger-700 
+           transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 bg-transparent border-2 border-primary-500 text-primary-600 rounded-xl font-medium 
+           hover:bg-primary-500 hover:text-white transition-all duration-300;
+  }
+  
+  /* Input styles */
+  .input-field {
+    @apply w-full px-4 py-3 bg-white/50 backdrop-blur-sm border-2 border-neutral-200 rounded-xl 
+           focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 
+           transition-all duration-300 placeholder:text-neutral-400;
+  }
+  
+  /* Card styles */
+  .card-priority-high {
+    @apply glass-card border-l-4 border-danger-500 animate-pulse-glow;
+  }
+  
+  .card-priority-normal {
+    @apply glass-card border-l-4 border-success-500;
+  }
+  
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-success {
+    @apply badge bg-success-100 text-success-700;
+  }
+  
+  .badge-danger {
+    @apply badge bg-danger-100 text-danger-700;
+  }
+  
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-700;
+  }
+  
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+  
+  /* Alert styles */
+  .alert {
+    @apply p-4 rounded-xl border-l-4 animate-fade-in;
+  }
+  
+  .alert-danger {
+    @apply alert bg-danger-50 border-danger-500 text-danger-800;
+  }
+  
+  .alert-success {
+    @apply alert bg-success-50 border-success-500 text-success-800;
+  }
+  
+  .alert-warning {
+    @apply alert bg-warning-50 border-warning-500 text-warning-800;
+  }
+  
+  .alert-info {
+    @apply alert bg-primary-50 border-primary-500 text-primary-800;
+  }
+  
+  /* Page container */
+  .page-container {
+    @apply container mx-auto px-4 py-8 max-w-7xl;
+  }
+  
+  /* Dashboard grid */
+  .dashboard-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+  
+  /* Stat card */
+  .stat-card {
+    @apply glass-card-hover p-6 text-center;
+  }
+  
+  .stat-value {
+    @apply text-4xl font-bold text-primary-600 mb-2;
+  }
+  
+  .stat-label {
+    @apply text-sm uppercase tracking-wide text-neutral-600 font-medium;
+  }
+  
+  /* Upload zone */
+  .upload-zone {
+    @apply glass-card border-2 border-dashed border-primary-300 p-12 text-center cursor-pointer
+           hover:border-primary-500 hover:bg-primary-50/50 transition-all duration-300;
+  }
+  
+  .upload-zone-active {
+    @apply upload-zone border-primary-600 bg-primary-100/50;
+  }
+  
+  /* Loading spinner */
+  .spinner {
+    @apply inline-block w-6 h-6 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin;
+  }
+  
+  /* Glassmorphism overlay */
+  .glass-overlay {
+    @apply fixed inset-0 bg-black/20 backdrop-blur-sm z-40;
+  }
+  
+  /* Modal */
+  .modal {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  }
+  
+  .modal-content {
+    @apply glass-card p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-slide-up;
+  }
+}
