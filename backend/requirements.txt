@@ -12,3 +12,5 @@ matplotlib==3.8.2
 seaborn==0.13.1
 keras-tuner==1.4.6
 werkzeug==3.0.1
+gunicorn==21.2.0
+psutil==5.9.6
